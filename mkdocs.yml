@@ -1,0 +1,7 @@
+site_name: bip-bih-test-root
+
+nav:
+  - Home: index.md
+
+plugins:
+  - techdocs-core

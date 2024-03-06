@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>bip-bih-test-root</title>
+
+        <!-- Learn more about CSP policies at https://content-security-policy.com/#directive -->
+        <!-- Script hashes should be kept in order of use. -->
+        <!-- Some scripts may require a second hash due to spacing differences in live deployments' compilation. -->
+        <!-- If your MFE encounters CSP-related errors, contact Team Antares for assistance. -->
+        <meta http-equiv="Content-Security-Policy" content="
+            base-uri 'self';
+            default-src https://*.va.gov http://localhost:*;
+            connect-src https://*.va.gov wss://*.va.gov http://localhost:* ws://localhost:*;
+            font-src https://*.va.gov http://localhost:* data:;
+            img-src https://*.va.gov http://localhost:* data: blob:;
+            style-src https://*.va.gov http://localhost:* 'unsafe-inline';
+            object-src 'none';
+            script-src https://*.va.gov http://localhost:* https://cdn.jsdelivr.net
+        ">
+
+        <meta name="importmap-type" content="systemjs-importmap" />
+        <!-- To turn off import-map-overrides for specific environments (e.g. prod), add them to the line below. -->
+        <!-- See: https://github.com/joeldenning/import-map-overrides/blob/master/docs/configuration.md#domain-list -->
+        <meta name="import-map-overrides-domains" content="denylist:*.prod.bip.va.gov" />
+
+        <!-- This script generates additional <script> elements for all required dependencies in the document head. -->
+        <!-- This is done via a separate js file for readability and to avoid requiring new hashes for all changes. -->
+        <script src="/import-dependencies.js"></script>
+
+    </head>
+    <body>
+        <noscript>
+            You need to enable JavaScript to run this app.
+        </noscript>
+        <script src="/import-root.js"></script>
+        <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+    </body>
+</html>

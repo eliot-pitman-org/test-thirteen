@@ -1,0 +1,10 @@
+Jenkinsfile
+node_modules
+npm-debug.log
+.editorconfig
+.eslintignore
+.eslintrc
+.gitignore
+.npmrc
+keycloak-client.json
+keycloak-local-client.json

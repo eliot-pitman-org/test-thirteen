@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: test-thirteen
+  description: hello this is a description of my cool app
+  tags:
+    - mfe
+  annotations:
+    github.com/project-slug: department-of-veterans-affairs/test-thirteen
+    
+    backstage.io/techdocs-ref: dir:.
+    
+spec:
+  type: website
+  owner: blue
+  system: bip-platform
+  lifecycle: experimental
